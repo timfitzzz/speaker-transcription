@@ -33,7 +33,7 @@ class Predictor(BasePredictor):
             segmentation_batch_size=32,
             embedding_batch_size=32,
             embedding_exclude_overlap=True,
-        )
+        ).to("cuda")
         self.diarization.instantiate({
             "clustering": {
                 "method": "centroid",
